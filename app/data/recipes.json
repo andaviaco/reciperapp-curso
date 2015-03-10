@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "name": "Chilaquiles",
+        "category": "Desayunos",
+        "image": "chilaquiles.jpg",
+        "ingredients": [
+            {
+                "number": 1,
+                "name": "Chiles",
+                "quantity": "3"
+            }
+        ],
+        "steps": [
+            {
+                "number": 1,
+                "description": "Eat it."
+            }
+        ],
+        "comments": [
+            {
+                "author": "Juan",
+                "date": "2015-03-10T10:10:1000Z",
+                "comment": "This is a comment"
+            }
+        ]
+    }
+]
