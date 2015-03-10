@@ -4,6 +4,16 @@ nav {
   margin-bottom: 2em;
 }
 
+.main-title a {
+  color: #222;
+  text-decoration: none;
+}
+
+.main-title .app-title {
+  font-size: 2.5em;
+  font-family: 'Lobster', cursive;
+}
+
 .menu {
   border-bottom: 0.1em solid black;
   list-style: none;
