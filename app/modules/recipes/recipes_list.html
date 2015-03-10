@@ -1,3 +1,25 @@
 <section>
+    <article ng-repeat="recipe in recipes">
 
-</section>
+        <figure>
+            <img ng-src="{{recipe.image}}">
+            <figcaption>
+                <h3>{{recipe.name}}</h3>
+            </figcaption>
+        </figure>
+
+        <strong>Ingredientes</strong>
+        <ul>
+            <li ng-repeat="ingredient in recipe.ingredients">
+                <i>{{ingredient.quantity}}</i>
+                {{ingredient.name}}
+            </li>
+        </ul>
+
+        <strong>Pasos</strong>
+        <ol>
+            <li ng-repeat="step in recipe.steps">{{step.description}}</li>
+        </ol>
+
+    </article>
+</section>gt

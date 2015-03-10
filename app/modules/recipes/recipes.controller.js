@@ -7,5 +7,5 @@ angular.module('Reciper.recipes')
 RecipesController.$inject = ['$scope', 'RecipesService'];
 
 function RecipesController($scope, RecipesService) {
-
+    $scope.recipes = RecipesService.query();
 }

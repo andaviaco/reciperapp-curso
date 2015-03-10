@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Chilaquiles",
         "category": "Desayunos",
-        "image": "chilaquiles.jpg",
+        "image": "http://www.dondeir.com/wp-content/uploads/2013/08/chilaquiles.jpg",
         "ingredients": [
             {
                 "number": 1,
