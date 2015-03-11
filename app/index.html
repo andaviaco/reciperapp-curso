@@ -28,6 +28,64 @@
     </header>
 
     <div ng-view></div>
+    
+<section ng-controller="RecipesController as data">
+    <form name="receta" ng-submit="data.guardar(receta)" ng-controller="formularioController as form">
+        
+        <div>
+            <label for="nombre">Nombre</label>
+            
+            <input name="nombre" type="text" ng-model="data.nombre" required>
+
+            <span ng-if="receta.nombre.$invalid">El campo es invalido</span>
+            <span ng-if="receta.nombre.$valid">El campo es valido</span>
+        </div>
+        <div>
+            <label>Tipo</label>
+            <select 
+                name="tipo" 
+                type="text" 
+                ng-model="data.tipo" 
+                ng-options="tipo.id as tipo.nombre for tipo in data.tipos">
+            </select>
+        </div>
+        <div>
+            <label>Descripción</label>
+            <textarea 
+                name="descripcion" 
+                ng-model="data.descripcion"
+                ng-required="receta.nombre.$valid"></textarea>
+        </div>
+        <button type="submit">Guardar</button>
+    </form>
+    <h1>{{nombre}}</h1>
+    <h1>{{tipo}}</h1>
+    <section ng-controller="listaController">
+        <article ng-repeat="recipe in data.recipes">
+            
+            <figure>
+                <img ng-src="{{recipe.image}}">
+                <figcaption>
+                    <h3>{{recipe.name}}</h3>
+                </figcaption>
+            </figure>
+
+            <strong>Ingredientes</strong>
+            <ul>
+                <li ng-repeat="ingredient in recipe.ingredients">
+                    <i>{{ingredient.quantity}}</i>
+                    {{ingredient.name}}
+                </li>
+            </ul>
+
+            <strong>Pasos</strong>
+            <ol>
+                <li ng-repeat="step in recipe.steps">{{step.description}}</li>
+            </ol>
+
+        </article>
+    </section>
+</section>
 
     <footer>My Super Reciper footer</footer>
 

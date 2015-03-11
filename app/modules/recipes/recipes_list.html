@@ -1,6 +1,23 @@
-<section>
-    <article ng-repeat="recipe in recipes">
-
+<section ng-controller="RecipesController as data">
+    <form>
+        <div>
+            <label>Nombre</label>
+            <input type="text" ng-model="nombre">
+        </div>
+        <div>
+            <label>Tipo</label>
+            <input type="text" ng-model="tipo">
+        </div>
+        <div>
+            <label>Descripción</label>
+            <textarea></textarea>
+        </div>
+        <button type="submit" ng-click="guarda()">Guardar</button>
+    </form>
+    <h1>{{nombre}}</h1>
+    <h1>{{tipo}}</h1>
+    <article ng-repeat="recipe in data.recipes">
+        
         <figure>
             <img ng-src="{{recipe.image}}">
             <figcaption>
