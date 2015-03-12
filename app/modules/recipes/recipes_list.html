@@ -1,4 +1,53 @@
 <section>
+    <form name="recipes_form" novalidate ng-submit="create(new_recipe)">
+        <fieldset>
+            <div>
+                <label>Nombre*</label>
+                <input name="name" type="text" ng-model="new_recipe.name">
+            </div>
+
+            <div>
+                <label>Categoría</label>
+                <select name="category" ng-model="new_recipe.category" ng-options="category.key as category.value for category in categories">
+                    <option value="">-- Ninguna --</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Imagen URL</label>
+                <input type="url" ng-model="new_recipe.image">
+            </div>
+        </fieldset>
+
+        <ng-form name="ingrediet_form">
+            <fieldset>
+                <legend>Ingredientes</legend>
+                <div ng-repeat="ingredient in new_recipe.ingredients">
+                    <label>Cantidad</label>
+                    <input type="text" name="ingredient_quantity" ng-model="ingredient.quantity">
+                    <label>Nombre</label>
+                    <input type="text" name="ingredient_name" ng-model="ingredient.name">
+                    <button type="submit" ng-if="$last" ng-click="addIngredient()">+</button>
+                </div>
+            </fieldset>
+        </ng-form>
+
+        <ng-form name="step_form">
+            <fieldset>
+                <legend>Procedimiento</legend>
+                <ol>
+                    <li ng-repeat="step in new_recipe.steps">
+                        <textarea rows="2" cols="20" name="step_description" ng-model="step.description"></textarea>
+                        <button type="button" ng-click="addStep()">+</button>
+                    </li>
+                </ol>
+                </div>
+            </fieldset>
+        </ng-form>
+
+        <button type="submit">Agregar receta</button>
+    </form>
+
     <article ng-repeat="recipe in recipes">
 
         <figure>
@@ -22,4 +71,4 @@
         </ol>
 
     </article>
-</section>gt
+</section>gtas
