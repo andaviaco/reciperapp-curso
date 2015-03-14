@@ -4,34 +4,49 @@
 angular.module('Reciper.recipes')
     .controller('RecipesController', RecipesController);
 
-RecipesController.$inject = ['$scope', 'RecipesService'];
+RecipesController.$inject = ['$scope', 'RecipesService', 'CategoriesService'];
 
-function RecipesController($scope, RecipesService) {
-    $scope.recipes    = RecipesService.query();
-    $scope.categories = [
-        {
-            key: "0",
-            value: "Desayuno"
-        },
-        {
-            key: "1",
-            value: "Comida"
-        },
-        {
-            key: "2",
-            value: "Cena"
-        },
-        {
-            key: "3",
-            value: "Otra"
-        }
-    ];
+function RecipesController($scope, RecipesService, CategoriesService) {
 
+    var pokemon = {
+        objeto: 'pokemon',
+        id: 1
+    };
+
+    $scope.recipes    = RecipesService.get(pokemon, success, fail);
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    console.log('1');
+    $scope.categories = CategoriesService.query();
+    
     $scope.create        = create;
     $scope.addIngredient = addIngredient;
     $scope.addStep       = addStep;
 
     resetFormValues();
+
+    function success(){
+        $scope.recipes.catch_rate = 7;
+        alert('si se obtuvo');
+    }
+
+    function fail() {
+        alert(':(');
+    }
 
     function resetFormValues() {
         $scope.new_recipe             = {};

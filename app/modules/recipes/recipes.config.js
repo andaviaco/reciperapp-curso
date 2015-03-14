@@ -8,4 +8,4 @@ angular.module('Reciper.recipes', ['ngRoute', 'ngResource'])
     templateUrl: 'modules/recipes/recipes_list.html',
     controller: 'RecipesController'
   });
-}])
+}]);

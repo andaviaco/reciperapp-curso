@@ -7,8 +7,8 @@ angular.module('Reciper')
 RecipesService.$inject = ['$resource', '$http', '$q'];
 
 function RecipesService($resource, $http, $q) {
-    /*
-    function all() {
+    
+    /*function all() {
         var deferred = $q.defer();
 
         $http.get('data/recipes.json')
@@ -21,8 +21,8 @@ function RecipesService($resource, $http, $q) {
 
     return {
         all: all
-    }
-    */
+    };*/
+    
 
-    return $resource('data/recipes.json');
+    return $resource('http://pokeapi.co/api/v1/sprite/2/');
 }
