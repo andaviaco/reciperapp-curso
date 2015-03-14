@@ -1,25 +1,20 @@
 <section>
-    <article ng-repeat="recipe in recipes">
 
-        <figure>
-            <img ng-src="{{recipe.image}}">
-            <figcaption>
-                <h3>{{recipe.name}}</h3>
-            </figcaption>
-        </figure>
+    <form name="notasForm" ng-submit="vm.setNewNota()" novalidate>
+        <div>
+            <label>Nota</label>
+            <input name="nota" ng-model="vm.newNota" type="text" required>
+            <span ng-show="notasForm.nota.$invalid && notasForm.nota.$dirty">Este campo es requerido</span>
+            <span ng-show="vm.notaRepetida">Nota: la nota ya existe!</span>
+        </div>
+        <select ng-options="tipo for tipo in vm.tipos" ng-model="vm.tipo">
+            <option value="">Nada seleccionado</option>
+        </select>
+        <button type="submit">Agregar</button>
+    </form>
 
-        <strong>Ingredientes</strong>
-        <ul>
-            <li ng-repeat="ingredient in recipe.ingredients">
-                <i>{{ingredient.quantity}}</i>
-                {{ingredient.name}}
-            </li>
-        </ul>
-
-        <strong>Pasos</strong>
-        <ol>
-            <li ng-repeat="step in recipe.steps">{{step.description}}</li>
-        </ol>
-
+    <article ng-repeat="nota in vm.notas">
+        <span>{{nota}}</span>
     </article>
-</section>gt
+
+</section>
