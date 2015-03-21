@@ -24,5 +24,56 @@
                 "comment": "This is a comment"
             }
         ]
+    },
+     {
+        "id": 2,
+        "name": "cafe",
+        "category": "Desayunos",
+        "image": "http://i.huffpost.com/gen/1563279/images/o-CAFE-facebook.jpg",
+        "ingredients": [
+            {
+                "number": 1,
+                "name": "Chiles",
+                "quantity": "3"
+            }
+        ],
+        "steps": [
+            {
+                "number": 1,
+                "description": "Eat it."
+            }
+        ],
+        "comments": [
+            {
+                "author": "Juan",
+                "date": "2015-03-10T10:10:1000Z",
+                "comment": "This is a comment"
+            }
+        ]
+    }, {
+        "id": 3,
+        "name": "Huevo",
+        "category": "Desayunos",
+        "image": "http://eldiario.com.uy/wp-content/uploads/2013/10/12112012_El-huevo-mitos-y-beneficios1.jpg",
+        "ingredients": [
+            {
+                "number": 1,
+                "name": "Chiles",
+                "quantity": "3"
+            }
+        ],
+        "steps": [
+            {
+                "number": 1,
+                "description": "Eat it."
+            }
+        ],
+        "comments": [
+            {
+                "author": "Juan",
+                "date": "2015-03-10T10:10:1000Z",
+                "comment": "This is a comment"
+            }
+        ]
     }
 ]

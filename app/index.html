@@ -21,8 +21,16 @@
 
         <nav>
             <ul class="menu">
-                <li><a href="#/recipes">view1</a></li>
-                <li><a href="#/view2">view2</a></li>
+                <li ng-class="{'active': activeView == '/recipes'}">
+                    <a href="#/recipes">
+                        Recetas
+                    </a>
+                </li>
+                <li ng-class="{'active': activeView == '/recipe'}">
+                    <a href="#/recipe">
+                        Receta
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -38,5 +46,8 @@
     <script src="modules/recipes/recipes.config.js"></script>
     <script src="modules/recipes/recipes.controller.js"></script>
     <script src="modules/recipes/recipes.service.js"></script>
+    <script src="modules/recipe/recipe.config.js"></script>
+    <script src="modules/recipe/recipe.controller.js"></script>
+    <script src="modules/actualView.service.js"></script>
 </body>
 </html>

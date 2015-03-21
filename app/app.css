@@ -41,3 +41,7 @@ nav {
   content: "";
   padding: 0;
 }
+
+.menu > li.active {
+  background: red;
+}

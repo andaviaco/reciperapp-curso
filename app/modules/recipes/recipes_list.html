@@ -37,8 +37,18 @@
                 <legend>Procedimiento</legend>
                 <ol>
                     <li ng-repeat="step in new_recipe.steps">
-                        <textarea rows="2" cols="20" name="step_description" ng-model="step.description"></textarea>
-                        <button type="button" ng-click="addStep()">+</button>
+                        <textarea 
+                            rows="2" 
+                            cols="20" 
+                            name="step_description" 
+                            ng-model="step.description">
+                        </textarea>
+                        <button 
+                            type="button" 
+                            ng-if="$last" 
+                            ng-click="addStep()">
+                            +
+                        </button>
                     </li>
                 </ol>
                 </div>

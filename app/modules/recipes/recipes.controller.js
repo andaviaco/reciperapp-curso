@@ -4,9 +4,12 @@
 angular.module('Reciper.recipes')
     .controller('RecipesController', RecipesController);
 
-RecipesController.$inject = ['$scope', 'RecipesService'];
+RecipesController.$inject = ['$scope', 'RecipesService', 'ActualViewService'];
 
-function RecipesController($scope, RecipesService) {
+function RecipesController($scope, RecipesService, ActualViewService) {
+
+    ActualViewService.setView();
+
     $scope.recipes    = RecipesService.query();
     $scope.categories = [
         {
@@ -34,10 +37,11 @@ function RecipesController($scope, RecipesService) {
     resetFormValues();
 
     function resetFormValues() {
-        $scope.new_recipe             = {};
-        $scope.new_recipe.ingredients = [{}];
-        $scope.new_recipe.steps       = [{}];
-        $scope.new_recipe.comments    = [];
+        $scope.new_recipe = {
+            ingredients: [{}],
+            steps      : [{}],
+            comments   : []
+        };
     }
 
     function create(recipe) {
