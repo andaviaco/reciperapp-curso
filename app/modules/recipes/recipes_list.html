@@ -1,2 +1,20 @@
 <section>
+    <form ng-submit="vm.enviarFormulario(vm.modelo)">
+        <input type="text" ng-model="vm.modelo">
+        <button type="submit" name="button">enviar</button>
+    </form>
+
+    <p ng-if="vm.resultado">
+
+        <b>Resultado</b>
+        {{ vm.resultado }}
+    </p>
+
+    <h1>Letras:</h1>
+
+    <div class="">
+        <div ng-repeat="letra in vm.resultado">
+            {{letra}}
+        </div>
+    </div>
 </section>
