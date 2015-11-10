@@ -1,20 +1,47 @@
 <section>
-    <form ng-submit="vm.enviarFormulario(vm.modelo)">
-        <input type="text" ng-model="vm.modelo">
-        <button type="submit" name="button">enviar</button>
-    </form>
-
-    <p ng-if="vm.resultado">
-
-        <b>Resultado</b>
-        {{ vm.resultado }}
-    </p>
-
-    <h1>Letras:</h1>
-
-    <div class="">
-        <div ng-repeat="letra in vm.resultado">
-            {{letra}}
+    <h1>Receta nueva:</h1>
+    <form ng-submit="vm.agregarReceta(vm.nuevaReceta)">
+        <div class="">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" ng-model="vm.nuevaReceta.nombre">
         </div>
+
+        <div class="">
+            <h2>nuevo ingrediente:</h2>
+            <label for="ingrediente">Nombre:</label>
+            <input type="text" name="ingrediente" ng-model="vm.nuevoIngrediente.nombre">
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" name="cantidad" ng-model="vm.nuevoIngrediente.cantidad">
+
+            <button type="button" ng-click="vm.agregarIngrediente(vm.nuevoIngrediente)">
+              +
+            </button>
+
+            <h3>Ingredientes</h3>
+            <ul>
+                <li ng-repeat="ingrediente in vm.nuevaReceta.ingredientes">
+                  {{ingrediente.nombre}}: {{ingrediente.cantidad}}
+                </li>
+            </ul>
+        </div>
+
+        <button type="submit" name="button">Guardar</button>
+    </form>
+    <hr>
+    <h1>Recetas ({{vm.recetas.length}}):</h1>
+
+    <div ng-repeat="receta in vm.recetas">
+        <div class="">
+            <b>Nombre: </b>
+            <span>{{receta.nombre}}</span>
+        </div>
+
+        <h4>Ingredientes:</h4>
+        <ul>
+            <li ng-repeat="ingrediente in receta.ingredientes">
+              {{ingrediente.nombre}}: {{ingrediente.cantidad}}
+            </li>
+        </ul>
     </div>
+
 </section>
