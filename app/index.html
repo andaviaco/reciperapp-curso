@@ -8,35 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
-    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
-    <header>
-        <div class="main-title">
-            <a href="index.html">
-                <span class="app-title">My Super Reciper</span>
-            </a>
-        </div>
-
-        <nav>
-            <ul class="menu">
-                <li><a href="#/recipes">view1</a></li>
-                <li><a href="#/view2">view2</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div ng-view></div>
-
-    <footer>My Super Reciper footer</footer>
+    <ui-view />
 
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="app.js"></script>
     <script src="modules/recipes/recipes.config.js"></script>
     <script src="modules/recipes/recipes.controller.js"></script>
+    <script src="modules/recipes/recipe.controller.js"></script>
+    <script src="modules/recipes/editRecipe.controller.js"></script>
     <script src="modules/recipes/recipes.service.js"></script>
 </body>
 </html>

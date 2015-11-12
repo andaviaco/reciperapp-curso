@@ -2,27 +2,23 @@
 'use strict'
 
 angular.module('Reciper')
-    .factory('RecipesService', RecipesService);
+    .service('RecipesService', RecipesService);
 
-RecipesService.$inject = ['$resource', '$http', '$q'];
+RecipesService.$inject = [];
 
-function RecipesService($resource, $http, $q) {
-    /*
-    function all() {
-        var deferred = $q.defer();
+function RecipesService() {
+    var self = this;
+    var recetas = [];
 
-        $http.get('data/recipes.json')
-            .success(function (data) {
-                deferred.resolve(data);
-            });
+    this.addReceta = function (receta) {
+        recetas.push(receta);
+    };
 
-        return deferred.promise;
-    }
+    this.getAll = function () {
+        return recetas;
+    };
 
-    return {
-        all: all
-    }
-    */
-
-    return $resource('data/recipes.json');
+    this.getReceta = function (index) {
+        return recetas[index];
+    };
 }

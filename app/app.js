@@ -2,10 +2,10 @@
 
 // Declare app level module which depends on views, and components
 angular.module('Reciper', [
-    'ngRoute',
+    'ui.router',
     'Reciper.recipes'
 ])
 
-.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.otherwise({redirectTo: '/recipes'});
+.config(['$urlRouterProvider', function($urlRouterProvider) {
+    // $urlRouterProvider.otherwise("/recipes");
 }]);

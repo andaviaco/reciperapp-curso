@@ -28,9 +28,9 @@
         <button type="submit" name="button">Guardar</button>
     </form>
     <hr>
-    <h1>Recetas ({{vm.recetas.length}}):</h1>
+    <h1>Recetas ({{vm.recetas().length}}):</h1>
 
-    <div ng-repeat="receta in vm.recetas">
+    <div ng-repeat="receta in vm.recetas()">
         <div class="">
             <b>Nombre: </b>
             <span>{{receta.nombre}}</span>
@@ -43,5 +43,4 @@
             </li>
         </ul>
     </div>
-
 </section>

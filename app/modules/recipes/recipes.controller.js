@@ -6,40 +6,30 @@ RecipesController.$inject = ['RecipesService'];
 
 function RecipesController(RecipesService) {
     var vm = this;
-
+    console.log('hola');
     vm.nuevaReceta = {
-      ingredientes: []
+        ingredientes: []
     };
+
     vm.nuevoIngrediente = {};
-    vm.recetas = [];
 
     vm.agregarReceta = function (receta) {
         var ingredienteAgregado = vm.agregarIngrediente(vm.nuevoIngrediente);
-        if (receta.nombre) {
 
-            vm.recetas.push(receta);
+        RecipesService.addReceta(receta);
 
-            vm.nuevaReceta = {
-                ingredientes: []
-            };
-        } else {
-            alertarError('la receta debe tener un nombre');
-        }
+        vm.nuevaReceta = {
+            ingredientes: []
+        };
     }
     vm.agregarIngrediente = function (ingrediente) {
-        if (ingrediente.nombre) {
-            vm.nuevaReceta.ingredientes.push(ingrediente);
 
-            vm.nuevoIngrediente = {};
-        } else {
-            alertarError('el ingrediente debe tener un nombre');
+        vm.nuevaReceta.ingredientes.push(ingrediente);
 
-            return false;
-        }
-
-
+        vm.nuevoIngrediente = {};
     }
-    function alertarError(error) {
-        alert(error);
-    }
+
+    vm.recetas = function () {
+        return RecipesService.getAll();
+    };
 }
