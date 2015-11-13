@@ -11,6 +11,11 @@ function RecipesController(RecipesService) {
         ingredientes: []
     };
 
+    function pruebaDirectiva(msg) {
+        console.log(msg);
+    }
+
+    vm.pruebaDirectiva = pruebaDirectiva;
     vm.nuevoIngrediente = {};
 
     vm.agregarReceta = function (receta) {

@@ -6,6 +6,7 @@
             <input type="text" name="nombre" ng-model="vm.nuevaReceta.nombre">
         </div>
 
+
         <div class="">
             <h2>nuevo ingrediente:</h2>
             <label for="ingrediente">Nombre:</label>
@@ -31,16 +32,6 @@
     <h1>Recetas ({{vm.recetas().length}}):</h1>
 
     <div ng-repeat="receta in vm.recetas()">
-        <div class="">
-            <b>Nombre: </b>
-            <span>{{receta.nombre}}</span>
-        </div>
-
-        <h4>Ingredientes:</h4>
-        <ul>
-            <li ng-repeat="ingrediente in receta.ingredientes">
-              {{ingrediente.nombre}}: {{ingrediente.cantidad}}
-            </li>
-        </ul>
+        <my-recipe recipe="receta" titulo="Junito" funcion="vm.pruebaDirectiva('qué onda!')"></my-recipe>
     </div>
 </section>

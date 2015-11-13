@@ -7,5 +7,5 @@ angular.module('Reciper', [
 ])
 
 .config(['$urlRouterProvider', function($urlRouterProvider) {
-    // $urlRouterProvider.otherwise("/recipes");
+    $urlRouterProvider.otherwise("/recipes/");
 }]);

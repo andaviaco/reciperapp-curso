@@ -1,0 +1,17 @@
+<div>
+    <p>
+        {{titulo}}
+    </p>
+    <div class="">
+        <b>Nombre: </b>
+        <span>{{otracosa.nombre}}</span>
+    </div>
+
+    <h4>Ingredientes:</h4>
+    <ul>
+        <li ng-repeat="ingrediente in otracosa.ingredientes">
+          {{ingrediente.nombre}}: {{ingrediente.cantidad}}
+        </li>
+    </ul>
+    <button ng-click="funcion()">¡Saludame!</button>
+</div>
